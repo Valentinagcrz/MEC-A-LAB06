@@ -1,3 +1,5 @@
+package com.mycompany.laboratorio06;
+
 
 import javax.swing.Icon;
 
@@ -6,10 +8,7 @@ import javax.swing.Icon;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/**
- *
- * @author ASUS
- */
+
 public class NewJFrame extends javax.swing.JFrame {
 
     /**
@@ -31,6 +30,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,6 +43,22 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 51, 51));
 
         jPanel3.setBackground(new java.awt.Color(32, 28, 28));
+
+        jButton1.setBackground(new java.awt.Color(32, 28, 28));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("JUEGO DE DADOS");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dados/cuatro.png"))); // NOI18N
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dados/cinco.png"))); // NOI18N
 
         jTextField1.setBackground(new java.awt.Color(32, 28, 28));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -57,14 +75,33 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(120, 120, 120))
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(46, 46, 46)
+                                .addComponent(jLabel1)
+                                .addGap(63, 63, 63))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(120, 120, 120))))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(205, 205, 205)
+                .addGap(16, 16, 16)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
@@ -121,7 +158,43 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //generar tiro de los dados//
+        int dado1 = (int)(Math.random()*6)+1;
+             int dado2 = (int)(Math.random()*6)+1;
+                  //generamos los iconos 
+             Icon uno = new javax.swing.ImageIcon(getClass().getResource("/dados/dado_1.jpg"));
+             Icon dos = new javax.swing.ImageIcon(getClass().getResource("/dados/dado_2.jpg"));
+             Icon tres = new javax.swing.ImageIcon(getClass().getResource("/dados/dado_3.jpg"));
+             Icon cuatro = new javax.swing.ImageIcon(getClass().getResource("/dados/dado_4.jpg"));
+             Icon cinco = new javax.swing.ImageIcon(getClass().getResource("/dados/dado_5.jpg"));
+             Icon seis = new javax.swing.ImageIcon(getClass().getResource("/dados/dado_6.jpg"));
+             //mostramos los dados//
+             switch(dado1){
+                 case 1: jLabel1.setIcon(uno);break;
+                 case 2: jLabel1.setIcon(dos);break;
+                 case 3: jLabel1.setIcon(tres);break;
+                 case 4: jLabel1.setIcon(cuatro);break;
+                 case 5: jLabel1.setIcon(cinco);break;
+                 case 6: jLabel1.setIcon(seis);break;
+             }
+             switch(dado2){
+                 case 1: jLabel2.setIcon(uno);break;
+                 case 2: jLabel2.setIcon(dos);break;
+                 case 3: jLabel2.setIcon(tres);break;
+                 case 4: jLabel2.setIcon(cuatro);break;
+                 case 5: jLabel2.setIcon(cinco);break;
+                 case 6: jLabel2.setIcon(seis);break;
+             }
+             //mostramos el resultado de la tirada//
+              int resultado = dado1+dado2;
+              jTextField1.setText("Tu resultado es: " + resultado);
+             
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -155,6 +228,9 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
